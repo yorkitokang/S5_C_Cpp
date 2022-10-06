@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/Yorkito/OneDrive/Voyage/Courses/S5_C_Cpp/Project2/src/main.cpp
+calculator.h
+/mnt/c/Users/Yorkito/OneDrive/Voyage/Courses/S5_C_Cpp/Project2/src/calculator.h
+iostream
+-
+vector
+-
+cstring
+-
+
+include/calculator.h
+vector
+-
+

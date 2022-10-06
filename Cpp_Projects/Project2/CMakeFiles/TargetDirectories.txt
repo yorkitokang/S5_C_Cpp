@@ -1,0 +1,3 @@
+/mnt/c/Users/Yorkito/OneDrive/Voyage/Courses/S5_C_Cpp/Project2/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/Yorkito/OneDrive/Voyage/Courses/S5_C_Cpp/Project2/CMakeFiles/edit_cache.dir
+/mnt/c/Users/Yorkito/OneDrive/Voyage/Courses/S5_C_Cpp/Project2/CMakeFiles/Pro2.dir

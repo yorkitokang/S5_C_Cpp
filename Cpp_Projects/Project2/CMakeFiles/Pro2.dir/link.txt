@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/Pro2.dir/src/main.cpp.o CMakeFiles/Pro2.dir/src/multiply.cpp.o  -o Pro2 
