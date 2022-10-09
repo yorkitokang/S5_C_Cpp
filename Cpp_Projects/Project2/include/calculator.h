@@ -1,7 +1,9 @@
 #include <vector>
 #include <map>
+#include <string>
 using std::map;
 using std::vector;
+using std::string;
 
 enum Actions {MULTIPLY, ADD, MINUS, DIVIDE_SAVE, DIVIDE_PRECISE, MOD, SQUARE_ROOT, POWER};
 
