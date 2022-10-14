@@ -22,17 +22,20 @@ nice_number calculate(vector<char> input_stream, map<string, nice_number> variab
 
     string input_string;
     for (int i = 0; i < input_stream.size(); i++)
-    {
+    { 
         input_string.push_back(input_stream[i]);
     }
+    cout << "Input string!" << input_string << endl;
 
     if (regex_match(input_string, squareRoot_regex))
     {
+        cout << "Doing square root!" << std::endl;
         return squareRoot(niceNumberGenerator(input_stream,variable_map));
     }
 
     if(regex_match(input_string,minus_regex))
     {
+        cout << "You've input a minus number" << endl;
         vector<char> temp_char;
         for(int i = 1; i < input_stream.size();i++)
         {
@@ -69,6 +72,7 @@ nice_number calculate(vector<char> input_stream, map<string, nice_number> variab
                     {
                         temp_expression.push_back(input_stream[k]);
                     }
+                    cout << "calculate!" << std::endl;
                     //very important, iteration
                     nice_number temp_nice_number = calculate(temp_expression, variable_map);
                     vector<char> temp_expression_2 = niceNumberToVector(temp_nice_number);
@@ -82,23 +86,21 @@ nice_number calculate(vector<char> input_stream, map<string, nice_number> variab
 
         if (operationCheck(input_stream[i]))
         {
-            if ((input_stream[i] == '-' || input_stream[i] == '+') && input_stream[i - 1] == 'e' )
+            if (((input_stream[i] == '-' || input_stream[i] == '+') && input_stream[i - 1] == 'e' )|| input_stream[i-1] == ')')
             {
                 continue;
             }
             action_vector.push_back(input_stream[i]);
-
             vector<char> temp_expression;
-            if(input_stream[i-1] != ')')
+            for (int j = expression_positions[expression_vector.size()]; j < i; j++)
             {
-                for (int j = expression_positions[expression_vector.size()]; j < i; j++)
-                {
-                    temp_expression.push_back(input_stream[j]);
-                }
-                expression_vector.push_back(temp_expression);
+                temp_expression.push_back(input_stream[j]);
             }
-            
+
             expression_positions.push_back(i + 1);
+            expression_vector.push_back(temp_expression);
+
+            
             continue;
         }
 
@@ -115,13 +117,11 @@ nice_number calculate(vector<char> input_stream, map<string, nice_number> variab
         }
     }
     //
-    cout << "----------------------" << endl;
-    cout << "DOING ADDING UP" << endl;
     cout << "Number of expressions: " << expression_vector.size() << std::endl;
     cout << "Number of actions: " << action_vector.size() << std::endl;
     for (int i = 0; i < expression_positions.size(); i++)
     {
-        cout << "Expression positions :" << i << ":" << expression_positions[i] << std::endl;
+        cout << "Expression positions " << i << ":" << expression_positions[i] << std::endl;
     }
     cout << "expression_vectors : " << std::endl;
     for (int i = 0; i < expression_vector.size(); i++)
@@ -132,7 +132,7 @@ nice_number calculate(vector<char> input_stream, map<string, nice_number> variab
         }
         cout << std::endl;
     }
-    cout << "Action_vectors :" << std::endl;
+    cout << "action_vectors :" << std::endl;
     for (int i = 0; i < action_vector.size(); i++)
     {
         cout << action_vector[i] << std::endl;
@@ -141,21 +141,28 @@ nice_number calculate(vector<char> input_stream, map<string, nice_number> variab
     // second part
     vector<char> add_minus;
     vector<nice_number> basket;
+    int action_quantity = action_vector.size();
 
-    for (int i = 0; i < action_vector.size(); i++)
+    for (int i = 0; i < action_quantity; i++)
     {
+        cout << "p1" << std::endl;
         if (action_vector[i] == '+' || action_vector[i] == '-')
         {
+            cout << "Action quantity" << action_quantity << std::endl;
             if (i == 0)
             {
+                cout << "p4" << std::endl;
                 basket.push_back(niceNumberGenerator(expression_vector[i], variable_map));
+                cout << "p4" << std::endl;
             }
-            if (i == action_vector.size() - 1)
+            if (i == action_quantity - 1)
             {
+                cout << "p5" << std::endl;
                 basket.push_back(niceNumberGenerator(expression_vector[i + 1], variable_map));
             }
             if (action_vector[i + 1] == '+' || action_vector[i + 1] == '-')
             {
+                cout << "p6" << std::endl;
                 basket.push_back(niceNumberGenerator(expression_vector[i + 1],variable_map));
             }
             add_minus.push_back(action_vector[i]);
@@ -164,6 +171,7 @@ nice_number calculate(vector<char> input_stream, map<string, nice_number> variab
 
         if (i == 0 || (action_vector[i - 1] == '+' || action_vector[i - 1] == '-')) // actually, we don't need this
         {
+            cout << "p2" << std::endl;
             vector<nice_number> temp_number;
             vector<char> temp_action;
             temp_number.push_back(niceNumberGenerator(expression_vector[i],variable_map));
@@ -182,8 +190,8 @@ nice_number calculate(vector<char> input_stream, map<string, nice_number> variab
             {
                 if (!(action_vector[i] == '+' || action_vector[i] == '-'))
                 {
-                    temp_number.push_back(niceNumberGenerator(expression_vector[i+1],variable_map));
-                    if (!niceNumberGenerator(expression_vector[i+1],variable_map).valid)
+                    temp_number.push_back(niceNumberGenerator(expression_vector[i],variable_map));
+                    if (!niceNumberGenerator(expression_vector[i],variable_map).valid)
                     {
                         return not_valid_number;
                     }
@@ -192,6 +200,7 @@ nice_number calculate(vector<char> input_stream, map<string, nice_number> variab
                 }
                 break;
             }
+            cout << "p3" << std::endl;
             for (int j = 0; j < temp_action.size(); j++)
             {
                 switch (temp_action[j])
@@ -210,18 +219,10 @@ nice_number calculate(vector<char> input_stream, map<string, nice_number> variab
                     break;
                 }
             }
+            cout << "p4" << std::endl;
             basket.push_back(temp_number[temp_number.size() - 1]);
+            cout << "p5" << std::endl;
         }
-    }
-    cout << "THE BASKET" << endl;
-    for(int i = 0; i < basket.size(); i++)
-    {
-        cout << basket[i].critical << endl;
-    }
-    cout << "THE ACTION" << endl;
-    for(int i = 0; i < add_minus.size(); i++)
-    {
-        cout << add_minus[i] << endl;
     }
 
     if (basket.size() == 0)

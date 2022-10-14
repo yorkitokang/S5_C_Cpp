@@ -123,6 +123,87 @@ Pro2/fast:
 	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/build
 .PHONY : Pro2/fast
 
+src/add.o: src/add.cpp.o
+
+.PHONY : src/add.o
+
+# target to build an object file
+src/add.cpp.o:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/add.cpp.o
+.PHONY : src/add.cpp.o
+
+src/add.i: src/add.cpp.i
+
+.PHONY : src/add.i
+
+# target to preprocess a source file
+src/add.cpp.i:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/add.cpp.i
+.PHONY : src/add.cpp.i
+
+src/add.s: src/add.cpp.s
+
+.PHONY : src/add.s
+
+# target to generate assembly for a file
+src/add.cpp.s:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/add.cpp.s
+.PHONY : src/add.cpp.s
+
+src/calculate.o: src/calculate.cpp.o
+
+.PHONY : src/calculate.o
+
+# target to build an object file
+src/calculate.cpp.o:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/calculate.cpp.o
+.PHONY : src/calculate.cpp.o
+
+src/calculate.i: src/calculate.cpp.i
+
+.PHONY : src/calculate.i
+
+# target to preprocess a source file
+src/calculate.cpp.i:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/calculate.cpp.i
+.PHONY : src/calculate.cpp.i
+
+src/calculate.s: src/calculate.cpp.s
+
+.PHONY : src/calculate.s
+
+# target to generate assembly for a file
+src/calculate.cpp.s:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/calculate.cpp.s
+.PHONY : src/calculate.cpp.s
+
+src/dividePrecise.o: src/dividePrecise.cpp.o
+
+.PHONY : src/dividePrecise.o
+
+# target to build an object file
+src/dividePrecise.cpp.o:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/dividePrecise.cpp.o
+.PHONY : src/dividePrecise.cpp.o
+
+src/dividePrecise.i: src/dividePrecise.cpp.i
+
+.PHONY : src/dividePrecise.i
+
+# target to preprocess a source file
+src/dividePrecise.cpp.i:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/dividePrecise.cpp.i
+.PHONY : src/dividePrecise.cpp.i
+
+src/dividePrecise.s: src/dividePrecise.cpp.s
+
+.PHONY : src/dividePrecise.s
+
+# target to generate assembly for a file
+src/dividePrecise.cpp.s:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/dividePrecise.cpp.s
+.PHONY : src/dividePrecise.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -149,6 +230,60 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/minus.o: src/minus.cpp.o
+
+.PHONY : src/minus.o
+
+# target to build an object file
+src/minus.cpp.o:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/minus.cpp.o
+.PHONY : src/minus.cpp.o
+
+src/minus.i: src/minus.cpp.i
+
+.PHONY : src/minus.i
+
+# target to preprocess a source file
+src/minus.cpp.i:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/minus.cpp.i
+.PHONY : src/minus.cpp.i
+
+src/minus.s: src/minus.cpp.s
+
+.PHONY : src/minus.s
+
+# target to generate assembly for a file
+src/minus.cpp.s:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/minus.cpp.s
+.PHONY : src/minus.cpp.s
+
+src/mod.o: src/mod.cpp.o
+
+.PHONY : src/mod.o
+
+# target to build an object file
+src/mod.cpp.o:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/mod.cpp.o
+.PHONY : src/mod.cpp.o
+
+src/mod.i: src/mod.cpp.i
+
+.PHONY : src/mod.i
+
+# target to preprocess a source file
+src/mod.cpp.i:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/mod.cpp.i
+.PHONY : src/mod.cpp.i
+
+src/mod.s: src/mod.cpp.s
+
+.PHONY : src/mod.s
+
+# target to generate assembly for a file
+src/mod.cpp.s:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/mod.cpp.s
+.PHONY : src/mod.cpp.s
 
 src/multiply.o: src/multiply.cpp.o
 
@@ -177,6 +312,168 @@ src/multiply.cpp.s:
 	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/multiply.cpp.s
 .PHONY : src/multiply.cpp.s
 
+src/niceNumberGenerator.o: src/niceNumberGenerator.cpp.o
+
+.PHONY : src/niceNumberGenerator.o
+
+# target to build an object file
+src/niceNumberGenerator.cpp.o:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/niceNumberGenerator.cpp.o
+.PHONY : src/niceNumberGenerator.cpp.o
+
+src/niceNumberGenerator.i: src/niceNumberGenerator.cpp.i
+
+.PHONY : src/niceNumberGenerator.i
+
+# target to preprocess a source file
+src/niceNumberGenerator.cpp.i:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/niceNumberGenerator.cpp.i
+.PHONY : src/niceNumberGenerator.cpp.i
+
+src/niceNumberGenerator.s: src/niceNumberGenerator.cpp.s
+
+.PHONY : src/niceNumberGenerator.s
+
+# target to generate assembly for a file
+src/niceNumberGenerator.cpp.s:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/niceNumberGenerator.cpp.s
+.PHONY : src/niceNumberGenerator.cpp.s
+
+src/niceNumberToVector.o: src/niceNumberToVector.cpp.o
+
+.PHONY : src/niceNumberToVector.o
+
+# target to build an object file
+src/niceNumberToVector.cpp.o:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/niceNumberToVector.cpp.o
+.PHONY : src/niceNumberToVector.cpp.o
+
+src/niceNumberToVector.i: src/niceNumberToVector.cpp.i
+
+.PHONY : src/niceNumberToVector.i
+
+# target to preprocess a source file
+src/niceNumberToVector.cpp.i:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/niceNumberToVector.cpp.i
+.PHONY : src/niceNumberToVector.cpp.i
+
+src/niceNumberToVector.s: src/niceNumberToVector.cpp.s
+
+.PHONY : src/niceNumberToVector.s
+
+# target to generate assembly for a file
+src/niceNumberToVector.cpp.s:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/niceNumberToVector.cpp.s
+.PHONY : src/niceNumberToVector.cpp.s
+
+src/operationCheck.o: src/operationCheck.cpp.o
+
+.PHONY : src/operationCheck.o
+
+# target to build an object file
+src/operationCheck.cpp.o:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/operationCheck.cpp.o
+.PHONY : src/operationCheck.cpp.o
+
+src/operationCheck.i: src/operationCheck.cpp.i
+
+.PHONY : src/operationCheck.i
+
+# target to preprocess a source file
+src/operationCheck.cpp.i:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/operationCheck.cpp.i
+.PHONY : src/operationCheck.cpp.i
+
+src/operationCheck.s: src/operationCheck.cpp.s
+
+.PHONY : src/operationCheck.s
+
+# target to generate assembly for a file
+src/operationCheck.cpp.s:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/operationCheck.cpp.s
+.PHONY : src/operationCheck.cpp.s
+
+src/power.o: src/power.cpp.o
+
+.PHONY : src/power.o
+
+# target to build an object file
+src/power.cpp.o:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/power.cpp.o
+.PHONY : src/power.cpp.o
+
+src/power.i: src/power.cpp.i
+
+.PHONY : src/power.i
+
+# target to preprocess a source file
+src/power.cpp.i:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/power.cpp.i
+.PHONY : src/power.cpp.i
+
+src/power.s: src/power.cpp.s
+
+.PHONY : src/power.s
+
+# target to generate assembly for a file
+src/power.cpp.s:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/power.cpp.s
+.PHONY : src/power.cpp.s
+
+src/squareRoot.o: src/squareRoot.cpp.o
+
+.PHONY : src/squareRoot.o
+
+# target to build an object file
+src/squareRoot.cpp.o:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/squareRoot.cpp.o
+.PHONY : src/squareRoot.cpp.o
+
+src/squareRoot.i: src/squareRoot.cpp.i
+
+.PHONY : src/squareRoot.i
+
+# target to preprocess a source file
+src/squareRoot.cpp.i:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/squareRoot.cpp.i
+.PHONY : src/squareRoot.cpp.i
+
+src/squareRoot.s: src/squareRoot.cpp.s
+
+.PHONY : src/squareRoot.s
+
+# target to generate assembly for a file
+src/squareRoot.cpp.s:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/squareRoot.cpp.s
+.PHONY : src/squareRoot.cpp.s
+
+src/variableCheck.o: src/variableCheck.cpp.o
+
+.PHONY : src/variableCheck.o
+
+# target to build an object file
+src/variableCheck.cpp.o:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/variableCheck.cpp.o
+.PHONY : src/variableCheck.cpp.o
+
+src/variableCheck.i: src/variableCheck.cpp.i
+
+.PHONY : src/variableCheck.i
+
+# target to preprocess a source file
+src/variableCheck.cpp.i:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/variableCheck.cpp.i
+.PHONY : src/variableCheck.cpp.i
+
+src/variableCheck.s: src/variableCheck.cpp.s
+
+.PHONY : src/variableCheck.s
+
+# target to generate assembly for a file
+src/variableCheck.cpp.s:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/variableCheck.cpp.s
+.PHONY : src/variableCheck.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,12 +483,45 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Pro2"
+	@echo "... src/add.o"
+	@echo "... src/add.i"
+	@echo "... src/add.s"
+	@echo "... src/calculate.o"
+	@echo "... src/calculate.i"
+	@echo "... src/calculate.s"
+	@echo "... src/dividePrecise.o"
+	@echo "... src/dividePrecise.i"
+	@echo "... src/dividePrecise.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/minus.o"
+	@echo "... src/minus.i"
+	@echo "... src/minus.s"
+	@echo "... src/mod.o"
+	@echo "... src/mod.i"
+	@echo "... src/mod.s"
 	@echo "... src/multiply.o"
 	@echo "... src/multiply.i"
 	@echo "... src/multiply.s"
+	@echo "... src/niceNumberGenerator.o"
+	@echo "... src/niceNumberGenerator.i"
+	@echo "... src/niceNumberGenerator.s"
+	@echo "... src/niceNumberToVector.o"
+	@echo "... src/niceNumberToVector.i"
+	@echo "... src/niceNumberToVector.s"
+	@echo "... src/operationCheck.o"
+	@echo "... src/operationCheck.i"
+	@echo "... src/operationCheck.s"
+	@echo "... src/power.o"
+	@echo "... src/power.i"
+	@echo "... src/power.s"
+	@echo "... src/squareRoot.o"
+	@echo "... src/squareRoot.i"
+	@echo "... src/squareRoot.s"
+	@echo "... src/variableCheck.o"
+	@echo "... src/variableCheck.i"
+	@echo "... src/variableCheck.s"
 .PHONY : help
 
 
