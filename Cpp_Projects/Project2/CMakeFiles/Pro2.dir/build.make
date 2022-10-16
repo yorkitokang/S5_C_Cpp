@@ -200,18 +200,18 @@ CMakeFiles/Pro2.dir/src/power.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Pro2.dir/src/power.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Yorkito/OneDrive/Voyage/Courses/S5_C_Cpp/Project2/src/power.cpp -o CMakeFiles/Pro2.dir/src/power.cpp.s
 
-CMakeFiles/Pro2.dir/src/squareRoot.cpp.o: CMakeFiles/Pro2.dir/flags.make
-CMakeFiles/Pro2.dir/src/squareRoot.cpp.o: src/squareRoot.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Yorkito/OneDrive/Voyage/Courses/S5_C_Cpp/Project2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Pro2.dir/src/squareRoot.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Pro2.dir/src/squareRoot.cpp.o -c /mnt/c/Users/Yorkito/OneDrive/Voyage/Courses/S5_C_Cpp/Project2/src/squareRoot.cpp
+CMakeFiles/Pro2.dir/src/root.cpp.o: CMakeFiles/Pro2.dir/flags.make
+CMakeFiles/Pro2.dir/src/root.cpp.o: src/root.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/Yorkito/OneDrive/Voyage/Courses/S5_C_Cpp/Project2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Pro2.dir/src/root.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Pro2.dir/src/root.cpp.o -c /mnt/c/Users/Yorkito/OneDrive/Voyage/Courses/S5_C_Cpp/Project2/src/root.cpp
 
-CMakeFiles/Pro2.dir/src/squareRoot.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Pro2.dir/src/squareRoot.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/Yorkito/OneDrive/Voyage/Courses/S5_C_Cpp/Project2/src/squareRoot.cpp > CMakeFiles/Pro2.dir/src/squareRoot.cpp.i
+CMakeFiles/Pro2.dir/src/root.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Pro2.dir/src/root.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/Yorkito/OneDrive/Voyage/Courses/S5_C_Cpp/Project2/src/root.cpp > CMakeFiles/Pro2.dir/src/root.cpp.i
 
-CMakeFiles/Pro2.dir/src/squareRoot.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Pro2.dir/src/squareRoot.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Yorkito/OneDrive/Voyage/Courses/S5_C_Cpp/Project2/src/squareRoot.cpp -o CMakeFiles/Pro2.dir/src/squareRoot.cpp.s
+CMakeFiles/Pro2.dir/src/root.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Pro2.dir/src/root.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/Yorkito/OneDrive/Voyage/Courses/S5_C_Cpp/Project2/src/root.cpp -o CMakeFiles/Pro2.dir/src/root.cpp.s
 
 CMakeFiles/Pro2.dir/src/variableCheck.cpp.o: CMakeFiles/Pro2.dir/flags.make
 CMakeFiles/Pro2.dir/src/variableCheck.cpp.o: src/variableCheck.cpp
@@ -239,7 +239,7 @@ Pro2_OBJECTS = \
 "CMakeFiles/Pro2.dir/src/niceNumberToVector.cpp.o" \
 "CMakeFiles/Pro2.dir/src/operationCheck.cpp.o" \
 "CMakeFiles/Pro2.dir/src/power.cpp.o" \
-"CMakeFiles/Pro2.dir/src/squareRoot.cpp.o" \
+"CMakeFiles/Pro2.dir/src/root.cpp.o" \
 "CMakeFiles/Pro2.dir/src/variableCheck.cpp.o"
 
 # External object files for target Pro2
@@ -256,7 +256,7 @@ Pro2: CMakeFiles/Pro2.dir/src/niceNumberGenerator.cpp.o
 Pro2: CMakeFiles/Pro2.dir/src/niceNumberToVector.cpp.o
 Pro2: CMakeFiles/Pro2.dir/src/operationCheck.cpp.o
 Pro2: CMakeFiles/Pro2.dir/src/power.cpp.o
-Pro2: CMakeFiles/Pro2.dir/src/squareRoot.cpp.o
+Pro2: CMakeFiles/Pro2.dir/src/root.cpp.o
 Pro2: CMakeFiles/Pro2.dir/src/variableCheck.cpp.o
 Pro2: CMakeFiles/Pro2.dir/build.make
 Pro2: CMakeFiles/Pro2.dir/link.txt

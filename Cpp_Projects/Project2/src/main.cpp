@@ -4,6 +4,7 @@
 #include <cstring>
 #include <map>
 #include <regex>
+#include <math.h>
 
 using std::cout;
 using std::endl;
@@ -15,32 +16,11 @@ using std::map;
 using std::pair; 
 using std::regex;
 
-// regex positive_int_reg("[+]?[1-9][0-9]*");
-// regex zero_reg("[+-]?[0][.]?[0]*");
-// regex negative_int_teg("[-][1-9][0-9]*");
-// regex positive_float_reg("[+]?[1-9][0-9]*[.][0-9]+");
-// regex negative_float_reg("[-][1-9][0-9]*[.][0-9]+");
-// regex positive_scientific_float("[+]?[1-9][0-9]*[.]?[0-9]*[Ee][-][0-9]+");
-// regex negative_scientific_float("[-][1-9][0-9]*[.]?[0-9]*[Ee][-][0-9]+");
-// regex positive_scientific_exp("[+]?[1-9][0-9]*[.]?[0-9]*[Ee][+]?[0-9]+");
-// regex negative_scientific_exp("[-][1-9][0-9]*[.]?[0-9]*[Ee][+]?[0-9]+");
-// list<regex> regex_list= {
-//     positive_int_reg,
-//     zero_reg,
-//     negative_int_teg,
-//     positive_float_reg,
-//     negative_float_reg,
-//     positive_scientific_float,
-//     negative_scientific_float,
-//     positive_scientific_exp,
-//     negative_scientific_exp
-// };
-
 int main()
 {
 
     //Take the input as a 2D array
-    cout << "Please input your calculation:" << endl;
+    // cout << "Please input your calculation:" << endl;
     //vector<vector<char>> input_streams;//read multiple lines
     map<string,nice_number> variable_map;//store the variable
 
@@ -92,12 +72,12 @@ int main()
 
         // !!!!!!!!!!!!!!!!!!!!!!
         // test
-        cout<< "suppressed input:";
-        for(int i = 0; i < input_str.size(); i++)
-        {
-            cout << input_str[i];
-        }
-        cout << endl; 
+        // cout<< "suppressed input:";
+        // for(int i = 0; i < input_str.size(); i++)
+        // {
+        //     cout << input_str[i];
+        // }
+        // cout << endl; 
         //test
         // !!!!!!!!!!!!!!!!!!!!!!
         //TURN to string to do the test easily
@@ -113,11 +93,104 @@ int main()
         //CHECK if it is an equation, if not, do the calculation
         if(end_of_input)
         {
-            std::cout << "calculate!" << std::endl;
+            //std::cout << "calculate!" << std::endl;
             //calculate the result
             nice_number temp_number = calculate(input_str, variable_map);
-            cout << "Final Result : " << temp_number.critical << "e" << temp_number.exponential << std::endl;
-            cout << "Positive : " << temp_number.positive << endl;
+            //Remove the zeros in the end
+            if(temp_number.exponential < 0 && temp_number.exponential >= -10)
+            {
+                //cout<< sum.length()<<endl;
+                temp_number.critical.insert(temp_number.critical.length()+temp_number.exponential,1,'.');
+                for(int i = temp_number.critical.length();;i--)
+                {
+                    if (temp_number.critical[temp_number.critical.length()-1] == '0')
+                    {
+                        temp_number.critical.erase(temp_number.critical.length()-1);
+                        continue;
+                    }
+                    if (temp_number.critical[temp_number.critical.length()-1] == '.')
+                    {
+                        temp_number.critical.erase(temp_number.critical.length()-1);
+                        break;
+                    }
+                    break;
+                }
+            }else if(temp_number.exponential < -10)
+            {
+                long long sum_length = temp_number.critical.length();
+                temp_number.critical.insert(1,1,'.');
+                for(int i = temp_number.critical.length();;i--)
+                {
+                    if (temp_number.critical[temp_number.critical.length()-1] == '0')
+                    {
+                        temp_number.critical.erase(temp_number.critical.length()-1);
+                        if (temp_number.critical[temp_number.critical.length()-2] == '.')
+                        {
+                            break;
+                        }
+                        continue;
+                    }
+                    break;
+                }
+                temp_number.exponential += sum_length-1;
+                
+                if(temp_number.exponential < 0)
+                {
+                    temp_number.critical.insert(temp_number.critical.length(), 1, 'e');
+                    temp_number.critical.insert(temp_number.critical.length(), 1, '-');
+                } else if(temp_number.exponential == 0)
+                {
+                } else
+                {
+                    temp_number.critical.insert(temp_number.critical.length(), 1, 'e');
+                    temp_number.critical.insert(temp_number.critical.length(), 1, '+');
+                }
+                string final_ten_string = std::to_string(abs(temp_number.exponential));
+                //cout << int(log10(abs(final_tens))) << endl;
+                for (int i = 0; i < (int)log10(abs(temp_number.exponential))+1; i++)
+                {
+                    int a = pow(10,i+1);
+                    temp_number.critical.append(std::to_string(final_ten_string[i]-'0'));
+                }
+            }else if (temp_number.exponential > 0)
+            {
+                long long sum_length = temp_number.critical.length();
+                temp_number.critical.insert(1,1,'.');
+                temp_number.exponential += sum_length-1;
+                for(int i = temp_number.critical.length();;i--)
+                {
+                    if (temp_number.critical[temp_number.critical.length()-1] == '0')
+                    {
+                        temp_number.critical.erase(temp_number.critical.length()-1);
+                        if (temp_number.critical[temp_number.critical.length()-2] == '.')
+                        {
+                            break;
+                        }
+                        continue;
+                    }
+                    break;
+                }
+                if(temp_number.exponential != 0)
+                {
+                    temp_number.critical.insert(temp_number.critical.length(),1,'e');
+                    temp_number.critical.insert(temp_number.critical.length(),1,'+');
+                }
+                
+                string final_ten_string = std::to_string(abs(temp_number.exponential));
+                for (int i = 0; i < (int)log10(temp_number.exponential)+1; i++)
+                {
+                    int a = pow(10,i+1);
+                    temp_number.critical.append(std::to_string(final_ten_string[i]-'0'));
+                }
+            }
+            cout << temp_number.critical << endl;
+            // if(temp_number.exponential == 0)
+            // {
+            //     cout << "Final Result : " << temp_number.critical << std::endl;
+            // }else
+            // {
+            //     cout << "Final Result : " << temp_number.critical << "e" << temp_number.exponential << std::endl;
+            // }
         }else
         {
             char variable_name[10] = {'\0'};// have to initialize with that
@@ -131,7 +204,7 @@ int main()
                 cout << "The variable name is wrong!" << endl;
                 continue;
             }
-            cout << "The variable: "<< variable_name << endl;
+            //cout << "The variable: "<< variable_name << endl;
              //variable_map.insert();
             char variable_value[100] = {'\0'};
             int j = 0;
@@ -140,9 +213,9 @@ int main()
                 variable_value[j] = input_str[i];
                 j++;
             }
-            cout << "The value: "<< variable_value << endl;
+            //cout << "The value: "<< variable_value << endl;
             vector<char> variable_value_vector = {};
-            for(int i = 0; i < strlen(variable_name);i++)
+            for(int i = 0; i < strlen(variable_value);i++)
             {
                 variable_value_vector.push_back(variable_value[i]);
             }

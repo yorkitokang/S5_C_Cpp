@@ -20,10 +20,7 @@ vector<char> niceNumberToVector(nice_number nice_number_o)
         return nice_vector;
     } else if(nice_number_o.exponential != 0)
     {
-        if(nice_number_o.exponential < 0)
-        {
-            nice_vector.push_back('-');
-        }
+        
         for(int i = 0; i < nice_number_o.critical.size();i++)
         {
             nice_vector.push_back(nice_number_o.critical[i]);

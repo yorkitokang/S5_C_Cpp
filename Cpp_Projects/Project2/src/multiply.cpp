@@ -12,10 +12,10 @@ using std::to_string;
 
 nice_number multiply(nice_number first_number, nice_number second_number)
 {
-    cout <<"----------------------" << endl;
-    cout << "DOING MUL" <<endl;
-    cout << "The first number is :" << first_number.critical << "e" << first_number.exponential << " Positive : " << first_number.positive << endl;
-    cout << "The second number is :" << second_number.critical << "e" << second_number.exponential << " Positive : " << second_number.positive << endl;
+    // cout <<"----------------------" << endl;
+    // cout << "DOING MUL" <<endl;
+    // cout << "The first number is :" << first_number.critical << "e" << first_number.exponential << " Positive : " << first_number.positive << endl;
+    // cout << "The second number is :" << second_number.critical << "e" << second_number.exponential << " Positive : " << second_number.positive << endl;
     string number_one_critical = first_number.critical;
     string number_two_critical = second_number.critical;
     long long number_one_tens = first_number.exponential;

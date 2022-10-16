@@ -2,6 +2,7 @@
 #include <iostream>
 #include <assert.h>
 #include <regex>
+#include <cmath>
 
 using std::cin;
 using std::cout;
@@ -13,6 +14,7 @@ nice_number calculate(vector<char> input_stream, map<string, nice_number> variab
 
     regex squareRoot_regex("[s][q][r][t][(](.+)[)]");
     regex minus_regex("[-](.+)");
+    regex abs_regex("[a][b][s][(](.+)[)]");
 
     nice_number not_valid_number = {false, true, "", 0};
     vector<vector<char>> expression_vector;
@@ -21,6 +23,7 @@ nice_number calculate(vector<char> input_stream, map<string, nice_number> variab
     vector<char> minus_ion = {'-','1'};
 
     string input_string;
+
     for (int i = 0; i < input_stream.size(); i++)
     {
         input_string.push_back(input_stream[i]);
@@ -28,9 +31,23 @@ nice_number calculate(vector<char> input_stream, map<string, nice_number> variab
 
     if (regex_match(input_string, squareRoot_regex))
     {
-        return squareRoot(niceNumberGenerator(input_stream,variable_map));
+        char temp[40];
+        for(int i = 5; i < input_string.length()-1; i++)
+        {
+            temp[i-5] = input_string[i];
+        }
+        double temp_double = atof(temp);
+        double result = sqrt(temp_double);
+        string result_string = std::to_string(result);
+        vector<char> temp_char;
+        for(int i = 0; i < result_string.length(); i++)
+        {
+            temp_char.push_back(result_string[i]);
+        }
+        
+        return niceNumberGenerator(temp_char,variable_map);
     }
-
+    // if the input is minus expression
     if(regex_match(input_string,minus_regex))
     {
         vector<char> temp_char;
@@ -42,6 +59,37 @@ nice_number calculate(vector<char> input_stream, map<string, nice_number> variab
         temp_number.positive ? temp_number.positive = false:temp_number.positive = true;
         return temp_number;
     }
+
+    if(regex_match(input_string,abs_regex))
+    {
+        vector<char> temp_char;
+        for(int i = 4; i < input_stream.size()-1;i++)
+        {
+            temp_char.push_back(input_stream[i]);
+        }
+        nice_number temp_number = niceNumberGenerator(temp_char,variable_map);
+        temp_number.positive = true;
+        return temp_number;
+    }
+    //check pure number
+    bool pure_number = false;
+    for(int i = 0; i < input_stream.size(); i++)
+    {
+        if(operationCheck(input_stream[i]))
+        {
+            if(i > 0 && input_stream[i-1] == 'e')
+            {
+                continue;
+            }
+            break;
+        }
+        if(i == input_stream.size()-1) pure_number=true;
+    }
+    if(pure_number)
+    {
+        return niceNumberGenerator(input_stream,variable_map);
+    }
+    //
 
     for (int i = 0; i < input_stream.size(); i++)
     {
@@ -115,28 +163,28 @@ nice_number calculate(vector<char> input_stream, map<string, nice_number> variab
         }
     }
     //
-    cout << "----------------------" << endl;
-    cout << "DOING ADDING UP" << endl;
-    cout << "Number of expressions: " << expression_vector.size() << std::endl;
-    cout << "Number of actions: " << action_vector.size() << std::endl;
-    for (int i = 0; i < expression_positions.size(); i++)
-    {
-        cout << "Expression positions :" << i << ":" << expression_positions[i] << std::endl;
-    }
-    cout << "expression_vectors : " << std::endl;
-    for (int i = 0; i < expression_vector.size(); i++)
-    {
-        for (int j = 0; j < expression_vector[i].size(); j++)
-        {
-            cout << expression_vector[i][j];
-        }
-        cout << std::endl;
-    }
-    cout << "Action_vectors :" << std::endl;
-    for (int i = 0; i < action_vector.size(); i++)
-    {
-        cout << action_vector[i] << std::endl;
-    }
+    // cout << "----------------------" << endl;
+    // cout << "DOING ADDING UP" << endl;
+    // cout << "Number of expressions: " << expression_vector.size() << std::endl;
+    // cout << "Number of actions: " << action_vector.size() << std::endl;
+    // for (int i = 0; i < expression_positions.size(); i++)
+    // {
+    //     // cout << "Expression positions :" << i << ":" << expression_positions[i] << std::endl;
+    // }
+    //cout << "expression_vectors : " << std::endl;
+    // for (int i = 0; i < expression_vector.size(); i++)
+    // {
+    //     for (int j = 0; j < expression_vector[i].size(); j++)
+    //     {
+    //         cout << expression_vector[i][j];
+    //     }
+    //     cout << std::endl;
+    // }
+    //cout << "Action_vectors :" << std::endl;
+    // for (int i = 0; i < action_vector.size(); i++)
+    // {
+    //     cout << action_vector[i] << std::endl;
+    // }
 
     // second part
     vector<char> add_minus;
@@ -177,7 +225,8 @@ nice_number calculate(vector<char> input_stream, map<string, nice_number> variab
                 return not_valid_number;
             }
             temp_action.push_back(action_vector[i]);
-
+            
+            
             for (i = i + 1; i < action_vector.size(); i++)
             {
                 if (!(action_vector[i] == '+' || action_vector[i] == '-'))
@@ -188,10 +237,13 @@ nice_number calculate(vector<char> input_stream, map<string, nice_number> variab
                         return not_valid_number;
                     }
                     temp_action.push_back(action_vector[i]);
+                    
                     continue;
                 }
+                i--;
                 break;
             }
+
             for (int j = 0; j < temp_action.size(); j++)
             {
                 switch (temp_action[j])
@@ -213,16 +265,16 @@ nice_number calculate(vector<char> input_stream, map<string, nice_number> variab
             basket.push_back(temp_number[temp_number.size() - 1]);
         }
     }
-    cout << "THE BASKET" << endl;
-    for(int i = 0; i < basket.size(); i++)
-    {
-        cout << basket[i].critical << endl;
-    }
-    cout << "THE ACTION" << endl;
-    for(int i = 0; i < add_minus.size(); i++)
-    {
-        cout << add_minus[i] << endl;
-    }
+    //cout << "THE BASKET" << endl;
+    // for(int i = 0; i < basket.size(); i++)
+    // {
+    //     cout << basket[i].critical << endl;
+    // }
+    //cout << "THE ACTION" << endl;
+    // for(int i = 0; i < add_minus.size(); i++)
+    // {
+    //     cout << add_minus[i] << endl;
+    // }
 
     if (basket.size() == 0)
     {

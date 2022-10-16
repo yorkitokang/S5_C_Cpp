@@ -420,32 +420,32 @@ src/power.cpp.s:
 	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/power.cpp.s
 .PHONY : src/power.cpp.s
 
-src/squareRoot.o: src/squareRoot.cpp.o
+src/root.o: src/root.cpp.o
 
-.PHONY : src/squareRoot.o
+.PHONY : src/root.o
 
 # target to build an object file
-src/squareRoot.cpp.o:
-	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/squareRoot.cpp.o
-.PHONY : src/squareRoot.cpp.o
+src/root.cpp.o:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/root.cpp.o
+.PHONY : src/root.cpp.o
 
-src/squareRoot.i: src/squareRoot.cpp.i
+src/root.i: src/root.cpp.i
 
-.PHONY : src/squareRoot.i
+.PHONY : src/root.i
 
 # target to preprocess a source file
-src/squareRoot.cpp.i:
-	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/squareRoot.cpp.i
-.PHONY : src/squareRoot.cpp.i
+src/root.cpp.i:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/root.cpp.i
+.PHONY : src/root.cpp.i
 
-src/squareRoot.s: src/squareRoot.cpp.s
+src/root.s: src/root.cpp.s
 
-.PHONY : src/squareRoot.s
+.PHONY : src/root.s
 
 # target to generate assembly for a file
-src/squareRoot.cpp.s:
-	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/squareRoot.cpp.s
-.PHONY : src/squareRoot.cpp.s
+src/root.cpp.s:
+	$(MAKE) -f CMakeFiles/Pro2.dir/build.make CMakeFiles/Pro2.dir/src/root.cpp.s
+.PHONY : src/root.cpp.s
 
 src/variableCheck.o: src/variableCheck.cpp.o
 
@@ -516,9 +516,9 @@ help:
 	@echo "... src/power.o"
 	@echo "... src/power.i"
 	@echo "... src/power.s"
-	@echo "... src/squareRoot.o"
-	@echo "... src/squareRoot.i"
-	@echo "... src/squareRoot.s"
+	@echo "... src/root.o"
+	@echo "... src/root.i"
+	@echo "... src/root.s"
 	@echo "... src/variableCheck.o"
 	@echo "... src/variableCheck.i"
 	@echo "... src/variableCheck.s"

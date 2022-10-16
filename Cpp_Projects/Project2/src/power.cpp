@@ -4,10 +4,10 @@
 using namespace std;
 nice_number power(nice_number first_number, nice_number second_number)
 {
-    cout <<"----------------------" << endl;
-    cout << "DOING POWER" <<endl;
-    cout << "The first number is :" << first_number.critical << "e" << first_number.exponential << " Positive : " << first_number.positive << endl;
-    cout << "The second number is :" << second_number.critical << "e" << second_number.exponential << " Positive : " << second_number.positive << endl;
+    // cout <<"----------------------" << endl;
+    // cout << "DOING POWER" <<endl;
+    // cout << "The first number is :" << first_number.critical << "e" << first_number.exponential << " Positive : " << first_number.positive << endl;
+    // cout << "The second number is :" << second_number.critical << "e" << second_number.exponential << " Positive : " << second_number.positive << endl;
     nice_number temp_number;
     nice_number result;
     if(second_number.exponential != 0)

@@ -1,10 +1,10 @@
 #include "calculator.h"
 nice_number dividePrecise(nice_number first_number, nice_number second_number, map<string,nice_number> variable_map)
 {
-    cout <<"----------------------" << endl;
-    cout << "DOING DIVIDE" <<endl;
-    cout << "The first number is :" << first_number.critical << "e" << first_number.exponential << " Positive : " << first_number.positive << endl;
-    cout << "The second number is :" << second_number.critical << "e" << second_number.exponential << " Positive : " << second_number.positive << endl;
+    // cout <<"----------------------" << endl;
+    // cout << "DOING DIVIDE" <<endl;
+    // cout << "The first number is :" << first_number.critical << "e" << first_number.exponential << " Positive : " << first_number.positive << endl;
+    // cout << "The second number is :" << second_number.critical << "e" << second_number.exponential << " Positive : " << second_number.positive << endl;
 
     nice_number temp_number;
     if(first_number.critical == "0")
@@ -45,15 +45,16 @@ nice_number dividePrecise(nice_number first_number, nice_number second_number, m
         while(true)
         {
             index++;
-            vector<char> temp_vector;
-            if(index == 10){
-                temp_vector = {'1','0'};
-            } else {
-                temp_vector = {(char)(index + '0')};
+            string index_string = std::to_string(index);
+            vector<char> index_vector;
+            for(int i = 0; i < index_string.length(); i++)
+            {
+                index_vector.push_back(index_string[i]);
             }
-            num_multiplier = multiply(niceNumberGenerator(temp_vector,variable_map),second_number);
+            nice_number temp_vector = niceNumberGenerator(index_vector,variable_map);
+            num_multiplier = multiply(temp_vector,second_number);
             nice_number capacitor = minus(temp_divisor_nice,num_multiplier);
-            cout << capacitor.positive << endl;
+            // cout << capacitor.positive << endl;
             if(capacitor.positive == true && capacitor.critical != "0")
             {
             }else if(capacitor.critical == "0")

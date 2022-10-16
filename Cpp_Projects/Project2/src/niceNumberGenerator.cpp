@@ -21,7 +21,9 @@ nice_number niceNumberGenerator(vector<char> input_stream, map<string, nice_numb
     regex zero_reg("[0][.]?[0]*");
     regex negative_int_teg("[-][1-9][0-9]*");
     regex positive_float_reg("[1-9][0-9]*[.][0-9]+");
+    regex positive_float_reg_2("[0][.][0-9]+");
     regex negative_float_reg("[-][1-9][0-9]*[.][0-9]+");
+    regex negative_float_reg_2("[-][0][.][0-9]+");
     regex positive_scientific_float("[1-9][0-9]*[.]?[0-9]*[Ee][-][0-9]+");
     regex negative_scientific_float("[-][1-9][0-9]*[.]?[0-9]*[Ee][-][0-9]+");
     regex positive_scientific_exp("[1-9][0-9]*[.]?[0-9]*[Ee][+]?[0-9]+");
@@ -44,7 +46,7 @@ nice_number niceNumberGenerator(vector<char> input_stream, map<string, nice_numb
         number_one.erase(0,1);
         number_one_critical = number_one;
         one_positive = false;
-    }else if(regex_match(number_one,negative_float_reg))
+    }else if(regex_match(number_one,negative_float_reg) || regex_match(number_one,negative_float_reg_2))
     {
         //cout<<"negative_float_reg"<<endl;
         number_one.erase(0,1);
@@ -56,9 +58,10 @@ nice_number niceNumberGenerator(vector<char> input_stream, map<string, nice_numb
                 number_one.erase(i,1);
             }
         }
+
         number_one_critical = number_one;
         one_positive = false;
-    }else if(regex_match(number_one,positive_float_reg))
+    }else if(regex_match(number_one,positive_float_reg) || regex_match(number_one,positive_float_reg_2))
     {
         if(number_one[0] == '+')
         {

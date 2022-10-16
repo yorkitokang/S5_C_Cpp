@@ -34,7 +34,7 @@ nice_number dividePrecise(nice_number first_number, nice_number second_number, m
 
 nice_number mod(nice_number first_number, nice_number second_number);
 
-nice_number squareRoot(nice_number number);
+nice_number root(nice_number number, nice_number exponential, map<string,nice_number> variable_map);
 
 nice_number power(nice_number first_number, nice_number second_number);
 

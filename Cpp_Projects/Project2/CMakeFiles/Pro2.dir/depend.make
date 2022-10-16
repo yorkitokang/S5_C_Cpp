@@ -34,8 +34,8 @@ CMakeFiles/Pro2.dir/src/operationCheck.cpp.o: include/calculator.h
 CMakeFiles/Pro2.dir/src/power.cpp.o: src/power.cpp
 CMakeFiles/Pro2.dir/src/power.cpp.o: include/calculator.h
 
-CMakeFiles/Pro2.dir/src/squareRoot.cpp.o: src/squareRoot.cpp
-CMakeFiles/Pro2.dir/src/squareRoot.cpp.o: include/calculator.h
+CMakeFiles/Pro2.dir/src/root.cpp.o: src/root.cpp
+CMakeFiles/Pro2.dir/src/root.cpp.o: include/calculator.h
 
 CMakeFiles/Pro2.dir/src/variableCheck.cpp.o: src/variableCheck.cpp
 CMakeFiles/Pro2.dir/src/variableCheck.cpp.o: include/calculator.h
